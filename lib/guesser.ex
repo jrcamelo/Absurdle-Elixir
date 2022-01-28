@@ -26,12 +26,12 @@ defmodule Guesser do
         IO.puts "You lose!"
         IO.puts "The answer was #{answer}"
       else
+        print_guess_letters(guess, answer)
         if (lives == 2) do
           IO.puts "This will be your last guess"
         else
           IO.puts "You have #{lives-1} guesses left"
         end
-        print_guess_letters(guess, answer)
         take_guess(answer, valid_words, lives-1)
       end
     end
